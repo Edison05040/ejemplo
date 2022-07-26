@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-5">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/update/<%= data.codigo %> " method="post">
+                            <div class="form-group">
+                                <input type="text" name="nombres" placeholder="Nombres" value="<%= data.nombres %> " class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="apellidos" placeholder="apellidos" value="<%= data.apellidos %> " class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="cedula" placeholder="cedula" value="<%= data.cedula %> " class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="direccion" placeholder="Direccion" value="<%= data.direccion %>" class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="correo_electronico" placeholder="Correo Electrónico" value="<%= data.correo_electronico %>" class="form-control mb-2">
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Guardar cambios">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

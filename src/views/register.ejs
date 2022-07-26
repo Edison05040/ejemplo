@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        body{
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: rgba(197, 37, 37, 0.95);
+        }
+    </style>
+    <title>REGISTER</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 shadow-lg p-3 mb-5">
+                    <div class="card border-primary">
+                        <div class="card-header bg-primary text-white">REGISTRARSE</div>
+                        <div class="card-body text-primary">
+                            <form action="/register" method="post">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nombre Completo</label>
+                                    <input id="name" name="name" type="text" class="form-control" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user" class="form-label">Cuenta de Usuario</label>
+                                    <input id="user" name="user" type="text" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pass" class="form-label">Contraseña</label>
+                                    <input id="pass" name="pass" type="password" class="form-control">
+                                </div>
+                                <div class="card-footer bg-transparent border-primary">
+                                    <a href="/" class="btn btn-secondary">CANCELAR</a>
+                                    <input type="submit" class="btn btn-primary" value="REGISTRAR">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+  </body>
+</html>

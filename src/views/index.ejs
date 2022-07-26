@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>INICIO</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><h1>REGISTRO DE ESTUDIANTE<h1></a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+        <a class="nav-link px-3 bg-danger" href="/logout">Salir</a>
+        </div>
+    </div>
+    </header>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Cédula</th>
+                            <th>Dirección</th>
+                            <th>Correo Electrónico</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(data){ %>
+                            <% for(let i=0; i<data.length; i++){ %>
+                                <tr>
+                                    <td><%= (i + 1) %> </td>
+                                    <td><%= data[i].nombres %> </td>
+                                    <td><%= data[i].apellidos %> </td>
+                                    <td><%= data[i].cedula %> </td>
+                                    <td><%= data[i].direccion %> </td>
+                                    <td><%= data[i].correo_electronico %> </td>
+                                    <td>
+                                        <a href="/delete/<%= data[i].codigo %>" class="btn btn-danger">Eliminar</a>
+                                        <a href="/update/<%= data[i].codigo %>" class="btn btn-primary">Editar</a>
+                                    </td>
+                                </tr>
+                            <% } %> 
+                        <% } %>  
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="post">
+                            <div class="form-group">
+                                <input type="text" name="nombres" placeholder="Nombres" class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="apellidos" placeholder="Apellidos" class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="cedula" placeholder="Cédula" class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="direccion" placeholder="Dirección" class="form-control mb-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="correo_electronico" placeholder="Correo Electrónico" class="form-control mb-2">
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Guardar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  </body>
+</html>
